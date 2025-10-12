@@ -1,0 +1,8 @@
+{ 
+  "paths":[
+    "../data/bldg/bldg_3dtiles_lod1/tileset.json",
+    "../data/bldg/bldg_3dtiles_lod2/tileset.json",
+    "../data/bldg/bldg_3dtiles_lod2_no_texture/tileset.json",
+    "../data/brid/brid_3dtiles_lod2/tileset.json"
+    ]
+}
