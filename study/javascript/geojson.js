@@ -35,6 +35,7 @@ export async function loadGeoJSON(viewer, urls) {
         if (entity.point) {
           entity.point.distanceDisplayCondition = undefined;
           entity.point.scaleByDistance = undefined;
+          entity.point.zIndex = 100;
         }
         // Polyline (線) の表示条件も解除
         if (entity.polyline) {
@@ -44,8 +45,11 @@ export async function loadGeoJSON(viewer, urls) {
         }
       }
 
+      // データソースに名前を設定（クリア機能のため）
+      dataSource._name = `GeoJSON_${url.split('/').pop()}`;
+      
       viewer.dataSources.add(dataSource);
-      console.log(`GeoJSON処理・追加完了: ${url}`);
+      console.log(`GeoJSON処理・追加完了: ${url} (名前: ${dataSource._name})`);
 
     } catch (error) {
       console.error(`GeoJSON読み込み・処理エラー (${url}):`, error);
